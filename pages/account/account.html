@@ -1,0 +1,64 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{ 'ACCOUNT_TITLE' | translate }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <form (submit)="doUpdateAccount()">
+    <ion-list >
+     
+      <!--Want to add a Username? Here you go:-->
+
+      <ion-item>
+        <ion-label fixed>{{ 'USERNAME' | translate }}</ion-label>
+        <ion-input type="text" [(ngModel)]="account.user_username" name="user_username" value="{{this.account.user_username}}" readonly class="readonly_fld"></ion-input>
+      </ion-item>
+      <!--
+      <ion-item>
+        <ion-label fixed>{{ 'PASSWORD' | translate }}</ion-label>
+        <ion-input type="password" [(ngModel)]="account.user_password" name="user_password"></ion-input>
+      </ion-item>
+      -->
+      <ion-item>
+        <ion-label fixed>{{ 'FIRSTNAME' | translate }}</ion-label>
+        <ion-input type="text" [(ngModel)]="account.user_firstname" name="user_firstname" value="{{this.account.user_firstname}}"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed>{{ 'LASTNAME' | translate }}</ion-label>
+        <ion-input type="text" [(ngModel)]="account.user_lastname" name="user_lastname" value="{{this.account.user_lastname}}"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed>{{ 'EMAIL' | translate }}</ion-label>
+        <ion-input type="email" [(ngModel)]="account.user_email" name="user_email" value="{{this.account.user_email}}" readonly class="readonly_fld"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed>{{ 'MOBILE' | translate }}</ion-label>
+        <ion-input type="text" [(ngModel)]="account.user_mobile" name="user_mobile" value="{{this.account.user_mobile}}"></ion-input>
+      </ion-item>
+    <!--
+      <ion-item>
+        <ion-label fixed>{{ 'PROFILE_PHOTO' | translate }}</ion-label>
+        <ion-input type="file" accept="image/*" id="user_photo" name="user_photo" [(ngModel)]="account.user_photo" (change)="changeListener($event)"></ion-input>
+      </ion-item>
+    -->
+      <div padding>
+        <button ion-button color="primary" block  style="background: #ED801C;">{{ 'UPDATE_BUTTON' | translate }}</button>
+      </div>
+
+    </ion-list>
+  </form>
+  
+  <div padding class="chain_bg">
+
+  <button ion-button block (click)="myaddress()" class="acctlinks"><ion-icon name="pin"></ion-icon>&nbsp;&nbsp;{{ 'MY ADDRESS' | translate }}</button>
+  <button ion-button block (click)="mystore()" class="acctlinks"><ion-icon name="cart"></ion-icon>&nbsp;&nbsp;{{ 'MY STORE' | translate }}</button>
+  <button ion-button block (click)="logout()" class="acctlinks"><ion-icon name="log-out"></ion-icon>&nbsp;&nbsp;{{ 'LOGOUT' | translate }}</button>
+  </div> 
+</ion-content>

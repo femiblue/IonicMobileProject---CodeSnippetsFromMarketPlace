@@ -1,0 +1,28 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{ 'SEARCH_TITLE' | translate }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-searchbar (ionInput)="getItems($event)" placeholder="{{ 'SEARCH_PLACEHOLDER' | translate }}"></ion-searchbar>
+  <ion-list>
+    <button ion-item (click)="openItem(item.service_id)" *ngFor="let item of currentItems">
+    <!--
+      <ion-avatar item-start>
+        <img [src]="item.profilePic" />
+      </ion-avatar>
+    -->
+    <ion-avatar item-start [ngStyle]="{'background-color':item.service_color}" class="list_service">
+      {{item.service_name | uppercase | slice:0:2}}
+      <!--<img [src]="item.profilePic" />-->
+    </ion-avatar>
+      <h2>{{item.service_name}}<button ion-button size="small"> € {{item.service_price}}</button></h2>
+      <p>{{item.service_desc}}</p>
+      <ion-note item-end *ngIf="item.note">{{item.note}}</ion-note>
+    </button>
+  </ion-list>
+</ion-content>

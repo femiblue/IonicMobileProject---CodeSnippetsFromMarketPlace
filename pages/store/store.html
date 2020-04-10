@@ -1,0 +1,53 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{ 'STORE_TITLE' | translate }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <form (submit)="doUpdateStore()">
+    <ion-list >
+     
+      <!--Want to add a Username? Here you go:-->
+
+      <ion-item>
+        <ion-label fixed>{{ 'STORE NAME' | translate }}</ion-label>
+        <ion-input type="text" [(ngModel)]="account.store_name" name="store_name" value="{{this.account.store_name}}"></ion-input>
+      </ion-item>
+      <!--
+      <ion-item>
+        <ion-label fixed>{{ 'PASSWORD' | translate }}</ion-label>
+        <ion-input type="password" [(ngModel)]="account.user_password" name="user_password"></ion-input>
+      </ion-item>
+      -->
+      <ion-item>
+        <ion-label >{{ 'DESCRIPTION' | translate }}</ion-label>
+        <ion-textarea style="height: 100px;" rows={10} cols={20} [(ngModel)]="account.store_desc" name="store_desc" >{{this.account.store_desc}}</ion-textarea>
+      </ion-item>
+
+	  
+    <!--
+      <ion-item>
+        <ion-label fixed>{{ 'PROFILE_PHOTO' | translate }}</ion-label>
+        <ion-input type="file" accept="image/*" id="user_photo" name="user_photo" [(ngModel)]="account.user_photo" (change)="changeListener($event)"></ion-input>
+      </ion-item>
+    -->
+      <div padding>
+        <button ion-button color="primary" block style="background: #ED801C;">{{ 'UPDATE_STORE' | translate }}</button>
+      </div>
+
+    </ion-list>
+  </form>
+  
+   <div padding class="chain_bg">
+
+  <!--<button ion-button block (click)="myaddress()" class="acctlinks"><ion-icon name="pin"></ion-icon>&nbsp;&nbsp;{{ 'MY ADDRESS' | translate }}</button>-->
+  <button ion-button block (click)="myservices()" class="acctlinks"><ion-icon name="cog"></ion-icon>&nbsp;&nbsp;{{ 'MY SERVICES' | translate }}</button>
+  <button ion-button block (click)="myirequests()" class="acctlinks"><ion-icon name="create"></ion-icon>&nbsp;&nbsp;{{ 'MY REQUESTS' | translate }}</button>
+  <button ion-button block (click)="myservices()" class="acctlinks"><ion-icon name="stats"></ion-icon>&nbsp;&nbsp;{{ 'MY RATINGS' | translate }}</button>
+  <!--<button ion-button block (click)="logout()" class="acctlinks">{{ 'LOGOUT' | translate }}</button> -->
+  </div>
+</ion-content>

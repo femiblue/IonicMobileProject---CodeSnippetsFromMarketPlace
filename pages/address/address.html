@@ -1,0 +1,65 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{ 'ADDRESS_TITLE' | translate }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <form (submit)="doUpdateAddress()">
+    <ion-list >
+     
+      <!--Want to add a Username? Here you go:-->
+
+      <ion-item>
+        <ion-label fixed>{{ 'STREET NR' | translate }}</ion-label>
+        <ion-input type="text" [(ngModel)]="account.store_address_number" name="store_address_number" value="{{this.account.store_address_number}}"></ion-input>
+      </ion-item>
+      <!--
+      <ion-item>
+        <ion-label fixed>{{ 'PASSWORD' | translate }}</ion-label>
+        <ion-input type="password" [(ngModel)]="account.user_password" name="user_password"></ion-input>
+      </ion-item>
+      -->
+      <ion-item>
+        <ion-label fixed>{{ 'STREET' | translate }}</ion-label>
+        <ion-input type="text" [(ngModel)]="account.store_address_street" name="store_address_street" value="{{this.account.store_address_street}}"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed>{{ 'AREA' | translate }}</ion-label>
+        <ion-input type="text" [(ngModel)]="account.store_address_area" name="store_address_area" value="{{this.account.store_address_area}}"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed>{{ 'POST CODE' | translate }}</ion-label>
+        <ion-input type="email" [(ngModel)]="account.store_address_postcode" name="store_address_postcode" value="{{this.account.store_address_postcode}}"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed>{{ 'CITY' | translate }}</ion-label>
+        <ion-input type="text" [(ngModel)]="account.store_address_city" name="store_address_city" value="{{this.account.store_address_city}}"></ion-input>
+      </ion-item>
+	  
+    <!--
+      <ion-item>
+        <ion-label fixed>{{ 'PROFILE_PHOTO' | translate }}</ion-label>
+        <ion-input type="file" accept="image/*" id="user_photo" name="user_photo" [(ngModel)]="account.user_photo" (change)="changeListener($event)"></ion-input>
+      </ion-item>
+    -->
+      <div padding>
+        <button ion-button color="primary" block style="background: #ED801C;">{{ 'UPDATE_ADDRESS' | translate }}</button>
+      </div>
+
+    </ion-list>
+  </form>
+  
+  <!-- <div padding class="chain_bg">
+
+  <button ion-button block (click)="myaddress()" class="acctlinks">{{ 'MY ADDRESS' | translate }}</button>
+  <button ion-button block (click)="myshop()" class="acctlinks">{{ 'MY SHOP' | translate }}</button>
+  <button ion-button block (click)="logout()" class="acctlinks">{{ 'LOGOUT' | translate }}</button>
+  </div> -->
+</ion-content>
